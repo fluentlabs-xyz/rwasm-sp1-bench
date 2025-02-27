@@ -1,0 +1,30 @@
+[package]
+name = "bench-rwasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rwasm = { git = "https://github.com/fluentlabs-xyz/rwasm", branch = "devel", default-features = false }
+fluentbase-runtime = { git = "https://github.com/fluentlabs-xyz/fluentbase", branch = "devel", default-features = false }
+fluentbase-sdk = { git = "https://github.com/fluentlabs-xyz/fluentbase", branch = "devel", default-features = false }
+fluentbase-genesis = { git = "https://github.com/fluentlabs-xyz/fluentbase", branch = "devel", default-features = false }
+revm = { git = "https://github.com/fluentlabs-xyz/fluentbase", branch = "devel", default-features = false, features = [
+    "std",
+    "hashbrown",
+    "blst",
+] }
+# bind to the version =0.8.21
+alloy-primitives = { version = "=0.8.21", default-features = false, features = ["rlp", "map"] }
+hex = "0.4.3"
+hex-literal = "1.0.0"
+sp1-sdk = "4.1.1"
+
+[build-dependencies]
+sp1-build = "4.1.1"
+
+[features]
+default = ["std"]
+std = [
+    #    "rwasm/std",
+    #    "revm/std",
+]
